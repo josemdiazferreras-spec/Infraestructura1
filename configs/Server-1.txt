@@ -1,0 +1,23 @@
+# Server-1
+IP: 10.6.93.130/28
+Gateway: 10.6.93.129
+Interfaz: ens3
+
+# ip route
+default via 10.6.93.129 dev ens3 proto static
+10.6.93.128/28 dev ens3 proto kernel scope link src 10.6.93.130
+
+# HTTPS
+LISTEN 0 511 0.0.0.0:443 0.0.0.0:* users:(("nginx",...))
+
+# /etc/nginx/sites-enabled/default
+server {
+  listen 443 ssl default_server;
+  ssl_certificate /etc/nginx/ssl/server.crt;
+  ssl_certificate_key /etc/nginx/ssl/server.key;
+  root /var/www/html;
+  index index.html;
+}
+
+# /var/www/html/index.html
+<h1>Servidor Web HTTPS - 2025-0693</h1>
