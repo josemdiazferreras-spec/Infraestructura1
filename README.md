@@ -1,6 +1,6 @@
 # Infraestructura 1 — VPN Site-to-Site con FortiGate
 
-> **Video de demostración:** PENDIENTE_DE_COLOCAR_ENLACE_YOUTUBE_O_ONEDRIVE
+>> **Video de demostración:** [Ver video en YouTube](https://youtu.be/CzcKlEvPcH4)
 
 **Estudiante:** Jose Miguel Diaz Ferreras  
 **Matrícula:** 2025-0693
