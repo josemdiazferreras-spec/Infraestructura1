@@ -1,0 +1,34 @@
+
+enable
+configure terminal
+
+hostname Switch1
+
+! VLAN de usuarios
+vlan 10
+ name USERS
+exit
+
+! Enlace hacia FGT-CLIENT
+interface GigabitEthernet0/0
+ description TRUNK_TO_FGT-CLIENT
+ switchport mode trunk
+ switchport trunk allowed vlan 10
+ no shutdown
+exit
+
+! Puerto hacia Cliente
+interface GigabitEthernet0/1
+ description CLIENTE_VLAN10
+ switchport mode access
+ switchport access vlan 10
+ spanning-tree portfast
+ no shutdown
+exit
+
+! Puertos no utilizados
+interface range GigabitEthernet0/2-3
+ shutdown
+exit
+
+end
